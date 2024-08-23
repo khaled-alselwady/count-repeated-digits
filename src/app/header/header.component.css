@@ -1,0 +1,15 @@
+header {
+  text-align: center;
+  background-color: rgb(18, 98, 225);
+  font-size: 2.5rem;
+  padding: 20px;
+  margin: 0 13rem;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+@media (max-width: 858px) {
+  header {
+    font-size: 1.5rem;
+  }
+}
