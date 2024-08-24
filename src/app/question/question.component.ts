@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { RandomNumbersComponent } from '../random-numbers/random-numbers.component';
+
 import { DifficultyOptions } from './question.model';
+import { RandomNumbersComponent } from './random-numbers/random-numbers.component';
 
 @Component({
   selector: 'app-question',

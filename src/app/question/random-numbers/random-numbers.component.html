@@ -8,7 +8,7 @@
 >
   <div
     class="grid-item"
-    *ngFor="let randomNumber of allRandomNumbers; let i = index"
+    *ngFor="let randomNumber of randomNumbers; let i = index"
     [style.background-color]="randomNumber.backgroundColor"
   >
     {{ randomNumber.number }}
