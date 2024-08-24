@@ -3,6 +3,7 @@ form {
   display: flex;
   align-items: center;
   position: relative;
+  font-size: 1.3rem;
 }
 
 input {
@@ -12,7 +13,8 @@ input {
   border-radius: 5px;
   outline: none;
   margin-right: 1rem;
-  font-size: 1.3rem;
+  font: inherit;
+  overflow: hidden;
 }
 
 .submit {
@@ -22,7 +24,7 @@ input {
   padding: 0.7rem 1rem;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.3rem;
+  font: inherit;
 }
 
 .reset {
@@ -35,5 +37,20 @@ input {
   margin-left: 1rem;
   position: absolute;
   right: 0;
-  font-size: 1.3rem;
+  font: inherit;
+}
+
+@media (max-width: 978px) {
+  form {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 870px) {
+  form {
+    display: block;
+  }
+  input {
+    width: 100%;
+  }
 }
