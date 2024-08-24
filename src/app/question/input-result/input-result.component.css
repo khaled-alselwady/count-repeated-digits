@@ -1,0 +1,39 @@
+form {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+input {
+  background-color: #1f1e1b;
+  border: 1px solid #1f1e1b;
+  padding: 0.7rem;
+  border-radius: 5px;
+  outline: none;
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+
+.submit {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.reset {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 1rem;
+  position: absolute;
+  right: 0;
+  font-size: 1.3rem;
+}

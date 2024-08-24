@@ -11,8 +11,8 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 7rem); /* 3 columns of equal width */
-  grid-template-rows: repeat(3, 7rem); /* 3 rows of equal height */
+  grid-template-columns: repeat(4, 7rem); /* 3 columns of equal width */
+  grid-template-rows: repeat(4, 7rem); /* 3 rows of equal height */
   gap: 1rem; /* Optional: Adds space between the grid items */
   padding: 3rem;
 }
@@ -28,8 +28,8 @@
 }
 
 .easy-difficulty {
-  grid-template-columns: repeat(3, 7rem);
-  grid-template-rows: repeat(3, 7rem);
+  grid-template-columns: repeat(4, 7rem);
+  grid-template-rows: repeat(4, 7rem);
 }
 
 .medium-difficulty {
@@ -74,6 +74,11 @@
 }
 
 @media (max-width: 978px) {
+  .easy-difficulty {
+    grid-template-columns: repeat(3, 7rem);
+    grid-template-rows: repeat(3, 7rem);
+  }
+
   .medium-difficulty {
     grid-template-columns: repeat(3, 7rem);
     grid-template-rows: repeat(3, 7rem);

@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()">
+  <input
+    type="number"
+    name="guess"
+    placeholder="Enter your guess"
+    [(ngModel)]="inputValue"
+  />
+
+  <p class="actions">
+    <button class="submit" type="submit">Submit</button>
+    <button class="reset" type="reset">Reset</button>
+  </p>
+</form>

@@ -13,12 +13,13 @@ header {
 
 label {
   margin-right: 10px;
+  font-size: 1.23rem;
 }
 
 select {
   font: inherit;
   padding: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   background-color: #1f1e1b;
   color: rgb(215, 230, 255);
   border: none;
