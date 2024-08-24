@@ -1,12 +1,7 @@
 <section>
   <header>How many times does the number {{ randomDigit }} appear?</header>
   <label for="difficulty">Select Difficulty:</label>
-  <select
-    name="difficulty"
-    id="difficulty"
-    (change)="onChangeDifficultyOptions(filter.value)"
-    #filter
-  >
+  <select name="difficulty" id="difficulty" #filter>
     <option value="easy">Easy</option>
     <option value="medium">Medium</option>
     <option value="hard">Hard</option>
@@ -16,6 +11,12 @@
     [difficultyMode]="getSelectedDifficultyMode(filter.value)"
   />
 
-  <app-input-result [randomDigit]="randomDigit" />
-  <app-output-result />
+  <app-input-result
+    [randomDigit]="randomDigit"
+    (checkAnswer)="onCheckAnswer($event)"
+  />
+
+  @if(isOutputVisible) {
+  <app-output-result [isCorrectAnswer]="isCorrectAnswer" />
+  }
 </section>
