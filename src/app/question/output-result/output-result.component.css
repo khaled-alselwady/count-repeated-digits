@@ -1,0 +1,13 @@
+div {
+  display: flex;
+}
+
+img {
+  width: 50px;
+  object-fit: contain;
+  margin-right: 1rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+}

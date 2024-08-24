@@ -3,11 +3,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DifficultyOptions } from './question.model';
 import { RandomNumbersComponent } from './random-numbers/random-numbers.component';
 import { InputResultComponent } from "./input-result/input-result.component";
+import { OutputResultComponent } from "./output-result/output-result.component";
 
 @Component({
   selector: 'app-question',
   standalone: true,
-  imports: [RandomNumbersComponent, InputResultComponent],
+  imports: [RandomNumbersComponent, InputResultComponent, OutputResultComponent],
   templateUrl: './question.component.html',
   styleUrl: './question.component.css',
 })
