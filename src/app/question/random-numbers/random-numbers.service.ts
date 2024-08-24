@@ -32,4 +32,16 @@ export class RandomNumbersService {
     }
     return this.randomNumbers;
   }
+
+  countNumber(numberToCheck: number) {
+    let count = 0;
+
+    for (const randomNumber of this.randomNumbers) {
+      if (randomNumber.number === numberToCheck) {
+        count++;
+      }
+    }
+
+    return count;
+  }
 }

@@ -4,7 +4,7 @@
   align-items: center; /* Vertically centers the grid */
   /* height: 100vh;  */
   background-color: #f0f0f0;
-  margin-top: 1rem;
+  margin-top: 2rem;
   border-radius: 7px;
   box-shadow: 0 0 3px 1px rgb(132, 18, 225);
 }
