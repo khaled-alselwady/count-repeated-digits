@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, input, Input, OnChanges, signal } from '@angular/core';
 
 @Component({
   selector: 'app-output-result',
@@ -8,15 +8,17 @@ import { Component, Input, OnChanges } from '@angular/core';
   styleUrl: './output-result.component.css',
 })
 export class OutputResultComponent implements OnChanges {
-  @Input({ required: true }) isCorrectAnswer: boolean | undefined = undefined;
-  result?: {
+  isCorrectAnswer = input.required<boolean>();
+  result = signal<{
     icon: string;
     message: string;
-  };
+  }>({ icon: '', message: '' });
 
   ngOnChanges() {
-    this.result = this.isCorrectAnswer
-      ? { icon: 'icons/correct.png', message: 'Correct!' }
-      : { icon: 'icons/wrong.png', message: 'Wrong!' };
+    this.result.set(
+      this.isCorrectAnswer()
+        ? { icon: 'icons/correct.png', message: 'Correct!' }
+        : { icon: 'icons/wrong.png', message: 'Wrong!' }
+    );
   }
 }

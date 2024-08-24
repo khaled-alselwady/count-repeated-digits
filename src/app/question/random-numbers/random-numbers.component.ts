@@ -1,8 +1,9 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   inject,
-  Input,
+  input,
 } from '@angular/core';
 
 import { NgFor } from '@angular/common';
@@ -18,14 +19,12 @@ import { RandomNumbersService } from './random-numbers.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RandomNumbersComponent {
-  @Input({ required: true }) difficultyMode: DifficultyOptions =
-    DifficultyOptions.EASY;
-
   private randomNumbersService = inject(RandomNumbersService);
+  difficultyMode = input.required<DifficultyOptions>();
 
-  get randomNumbers() {
-    return this.randomNumbersService.getAllRandomNumbers(this.difficultyMode);
-  }
+  randomNumbers = computed(() => {
+    return this.randomNumbersService.getAllRandomNumbers(this.difficultyMode());
+  });
 
   getValueOfDifficultyMode(difficultyMode: 'EASY' | 'MEDIUM' | 'HARD') {
     switch (difficultyMode) {

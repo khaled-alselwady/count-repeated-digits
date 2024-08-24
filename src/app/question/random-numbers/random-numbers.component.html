@@ -1,14 +1,15 @@
 <div
   class="grid-container"
   [class]="{
-    'easy-difficulty': difficultyMode === getValueOfDifficultyMode('EASY'),
-    'medium-difficulty': difficultyMode === getValueOfDifficultyMode('MEDIUM'),
-    'hard-difficulty': difficultyMode === getValueOfDifficultyMode('HARD')
+    'easy-difficulty': difficultyMode() === getValueOfDifficultyMode('EASY'),
+    'medium-difficulty':
+      difficultyMode() === getValueOfDifficultyMode('MEDIUM'),
+    'hard-difficulty': difficultyMode() === getValueOfDifficultyMode('HARD')
   }"
 >
   <div
     class="grid-item"
-    *ngFor="let randomNumber of randomNumbers; let i = index"
+    *ngFor="let randomNumber of randomNumbers(); let i = index"
     [style.background-color]="randomNumber.backgroundColor"
   >
     {{ randomNumber.number }}

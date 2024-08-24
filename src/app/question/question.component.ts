@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 
 import { DifficultyOptions } from './question.model';
 import { RandomNumbersComponent } from './random-numbers/random-numbers.component';
@@ -17,9 +17,10 @@ import { OutputResultComponent } from './output-result/output-result.component';
   styleUrl: './question.component.css',
 })
 export class QuestionComponent implements OnInit {
-  randomDigit = 0;
-  isCorrectAnswer = false;
-  isOutputVisible = false;
+  randomDigit = signal(0);
+  selectedDifficulty = signal<DifficultyOptions>(DifficultyOptions.EASY);
+  isCorrectAnswer = signal(false);
+  isOutputVisible = signal(false);
 
   getSelectedDifficultyMode(filter: string) {
     switch (filter) {
@@ -33,11 +34,15 @@ export class QuestionComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.randomDigit = Math.floor(Math.random() * 10);
+    this.randomDigit.set(Math.floor(Math.random() * 10));
   }
 
   onCheckAnswer(isCorrect: boolean) {
-    this.isCorrectAnswer = isCorrect;
-    this.isOutputVisible = true;
+    this.isCorrectAnswer.set(isCorrect);
+    this.isOutputVisible.set(true);
+  }
+
+  onSelectedDifficulty(filter: string) {
+    this.selectedDifficulty.set(this.getSelectedDifficultyMode(filter));
   }
 }
