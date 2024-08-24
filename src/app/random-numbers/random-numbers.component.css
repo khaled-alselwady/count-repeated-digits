@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  justify-content: center; /* Horizontally centers the grid */
+  align-items: center; /* Vertically centers the grid */
+  /* height: 100vh;  */
+  background-color: #f0f0f0;
+  margin-top: 1rem;
+  border-radius: 7px;
+  box-shadow: 0 0 3px 1px rgb(132, 18, 225);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 7rem); /* 3 columns of equal width */
+  grid-template-rows: repeat(3, 7rem); /* 3 rows of equal height */
+  gap: 1rem; /* Optional: Adds space between the grid items */
+  padding: 3rem;
+}
+
+.grid-item {
+  background-color: lightblue;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px; /* You can adjust the height as needed */
+  font-size: 1.5rem;
+}
+
+.easy-difficulty {
+  grid-template-columns: repeat(3, 7rem);
+  grid-template-rows: repeat(3, 7rem);
+}
+
+.medium-difficulty {
+  grid-template-columns: repeat(6, 7rem);
+  grid-template-rows: repeat(6, 7rem);
+}
+
+.hard-difficulty {
+  grid-template-columns: repeat(9, 7rem);
+  grid-template-rows: repeat(9, 7rem);
+}

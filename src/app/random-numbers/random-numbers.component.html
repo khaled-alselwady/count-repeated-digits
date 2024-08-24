@@ -1,0 +1,16 @@
+<div
+  class="grid-container"
+  [class]="{
+    'easy-difficulty': difficultyMode === getValueOfDifficultyMode('EASY'),
+    'medium-difficulty': difficultyMode === getValueOfDifficultyMode('MEDIUM'),
+    'hard-difficulty': difficultyMode === getValueOfDifficultyMode('HARD')
+  }"
+>
+  <div
+    class="grid-item"
+    *ngFor="let randomNumber of allRandomNumbers; let i = index"
+    [style.background-color]="randomNumber.backgroundColor"
+  >
+    {{ randomNumber.number }}
+  </div>
+</div>

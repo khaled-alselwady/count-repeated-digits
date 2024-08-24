@@ -1,9 +1,18 @@
 <section>
   <header>How many times does the number {{ randomDigit }} appear?</header>
   <label for="difficulty">Select Difficulty:</label>
-  <select name="difficulty" id="difficulty">
+  <select
+    name="difficulty"
+    id="difficulty"
+    (change)="onChangeDifficultyOptions(filter.value)"
+    #filter
+  >
     <option value="easy">Easy</option>
     <option value="medium">Medium</option>
     <option value="hard">Hard</option>
   </select>
+
+  <app-random-numbers
+    [difficultyMode]="getSelectedDifficultyMode(filter.value)"
+  />
 </section>

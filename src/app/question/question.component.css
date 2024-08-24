@@ -3,9 +3,24 @@ section {
   padding: 20px;
   margin: 50px 13rem;
   border-radius: 15px;
+  box-shadow: 0 0 5px 3px rgb(18, 98, 225);
 }
 
 header {
   font-size: 1.5rem;
   margin-bottom: 30px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+select {
+  font: inherit;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  background-color: #1f1e1b;
+  color: rgb(215, 230, 255);
+  border: none;
+  border-radius: 5px;
 }
