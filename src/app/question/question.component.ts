@@ -48,6 +48,7 @@ export class QuestionComponent implements OnInit {
   onSelectedDifficulty(filter: string) {
     this.isOutputVisible.set(false);
     this.selectedDifficulty.set(this.getSelectedDifficultyMode(filter));
+    this.randomDigit.set(Math.floor(Math.random() * 10));
   }
 
   onTimeout(isTimeout: boolean) {
