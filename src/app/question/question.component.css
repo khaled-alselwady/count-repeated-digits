@@ -8,7 +8,7 @@ section {
 
 header {
   font-size: 1.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 span {
@@ -19,6 +19,12 @@ span {
   padding: 3px 7px;
   border-radius: 5px;
   box-shadow: 0 0 7px #ffd700;
+}
+
+.container-difficulty-and-timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 label {

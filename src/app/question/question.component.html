@@ -16,9 +16,7 @@
         <option value="hard">Hard</option>
       </select>
     </div>
-    <div class="timer-container">
-      <app-timer />
-    </div>
+    <app-timer [difficultyOption]="selectedDifficulty()" />
   </div>
 
   <app-random-numbers [difficultyMode]="selectedDifficulty()" />
