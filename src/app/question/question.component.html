@@ -10,23 +10,32 @@
         id="difficulty"
         (change)="onSelectedDifficulty(filter.value)"
         #filter
+        [disabled]="isOutputVisible()"
       >
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
       </select>
     </div>
-    <app-timer [difficultyOption]="selectedDifficulty()" />
+    <app-timer
+      [difficultyOption]="selectedDifficulty()"
+      [isOutputVisible]="isOutputVisible()"
+      (timeout)="onTimeout($event)"
+    />
   </div>
 
   <app-random-numbers [difficultyMode]="selectedDifficulty()" />
 
   <app-input-result
     [randomDigit]="randomDigit()"
+    [isTimeout]="isTimeout()"
     (checkAnswer)="onCheckAnswer($event)"
   />
 
   @if(isOutputVisible()) {
-  <app-output-result [isCorrectAnswer]="isCorrectAnswer()" />
+  <app-output-result
+    [isCorrectAnswer]="isCorrectAnswer()"
+    [isTimeout]="isTimeout()"
+  />
   }
 </section>

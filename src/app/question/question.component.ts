@@ -4,7 +4,7 @@ import { DifficultyOptions } from './question.model';
 import { RandomNumbersComponent } from './random-numbers/random-numbers.component';
 import { OutputResultComponent } from './result/output-result/output-result.component';
 import { InputResultComponent } from './result/input-result/input-result.component';
-import { TimerComponent } from "./timer/timer.component";
+import { TimerComponent } from './timer/timer.component';
 
 @Component({
   selector: 'app-question',
@@ -13,8 +13,8 @@ import { TimerComponent } from "./timer/timer.component";
     RandomNumbersComponent,
     InputResultComponent,
     OutputResultComponent,
-    TimerComponent
-],
+    TimerComponent,
+  ],
   templateUrl: './question.component.html',
   styleUrl: './question.component.css',
 })
@@ -23,6 +23,7 @@ export class QuestionComponent implements OnInit {
   selectedDifficulty = signal<DifficultyOptions>(DifficultyOptions.EASY);
   isCorrectAnswer = signal(false);
   isOutputVisible = signal(false);
+  isTimeout = signal(false);
 
   getSelectedDifficultyMode(filter: string) {
     switch (filter) {
@@ -45,6 +46,12 @@ export class QuestionComponent implements OnInit {
   }
 
   onSelectedDifficulty(filter: string) {
+    this.isOutputVisible.set(false);
     this.selectedDifficulty.set(this.getSelectedDifficultyMode(filter));
+  }
+
+  onTimeout(isTimeout: boolean) {
+    this.isTimeout.set(isTimeout);
+    this.isOutputVisible.set(true);
   }
 }

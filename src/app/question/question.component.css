@@ -49,6 +49,10 @@ select {
   width: 7rem;
 }
 
+select:disabled {
+  cursor: no-drop;
+}
+
 .select-container:focus {
   box-shadow: 0 0 15px #ffd700;
 }

@@ -4,10 +4,13 @@
     name="guess"
     placeholder="Enter your guess"
     [(ngModel)]="inputValue"
+    #input
   />
 
   <p class="actions">
-    <button class="submit" type="submit">Submit</button>
+    <button class="submit" type="submit" [disabled]="isTimeout()">
+      Submit
+    </button>
     <button class="reset" type="reset" (click)="onReset()">Reset</button>
   </p>
 </form>

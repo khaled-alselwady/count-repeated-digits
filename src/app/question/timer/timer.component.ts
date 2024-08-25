@@ -1,4 +1,12 @@
-import { Component, effect, input, signal } from '@angular/core';
+import {
+  Component,
+  effect,
+  input,
+  OnChanges,
+  output,
+  signal,
+  SimpleChanges,
+} from '@angular/core';
 import { DifficultyOptions } from '../question.model';
 import { TimerPipe } from './timer.pipe';
 import { Timer, TimerOptions } from './timer.model';
@@ -10,13 +18,14 @@ import { Timer, TimerOptions } from './timer.model';
   templateUrl: './timer.component.html',
   styleUrl: './timer.component.css',
 })
-export class TimerComponent {
+export class TimerComponent implements OnChanges {
   difficultyOption = input.required<DifficultyOptions>();
+  isOutputVisible = input.required<boolean>();
   timer: Timer = {
     minutes: 0,
     seconds: 15,
   };
-
+  timeout = output<boolean>();
   interval?: ReturnType<typeof setInterval>;
 
   constructor() {
@@ -37,6 +46,11 @@ export class TimerComponent {
       }
     });
   }
+  ngOnChanges() {
+    if (this.isOutputVisible()) {
+      this.stopTimer();
+    }
+  }
 
   private convertFromSecondsToTimerObject(seconds: number): Timer {
     const minutes = seconds / 60;
@@ -55,6 +69,7 @@ export class TimerComponent {
       if (this.timer.seconds === 0) {
         if (this.timer.minutes === 0) {
           this.stopTimer();
+          this.timeout.emit(true);
         } else {
           this.timer.minutes--;
           this.timer.seconds = 59;
