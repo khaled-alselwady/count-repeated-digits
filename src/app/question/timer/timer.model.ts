@@ -3,3 +3,8 @@ export enum TimerOptions {
   MEDIUM = 21,
   HARD = 31,
 }
+
+export interface Timer {
+  minutes: number;
+  seconds: number;
+}
