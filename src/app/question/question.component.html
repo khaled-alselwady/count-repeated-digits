@@ -8,9 +8,9 @@
       <select
         name="difficulty"
         id="difficulty"
+        [disabled]="isOutputVisible()"
         (change)="onSelectedDifficulty(filter.value)"
         #filter
-        [disabled]="isOutputVisible()"
       >
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
@@ -19,7 +19,7 @@
     </div>
     <app-timer
       [difficultyOption]="selectedDifficulty()"
-      [isOutputVisible]="isOutputVisible()"
+      [isCorrectAnswer]="isCorrectAnswer()"
       (timeout)="onTimeout($event)"
     />
   </div>

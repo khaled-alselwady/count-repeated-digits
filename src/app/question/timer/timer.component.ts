@@ -1,12 +1,4 @@
-import {
-  Component,
-  effect,
-  input,
-  OnChanges,
-  output,
-  signal,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, effect, input, OnChanges, output } from '@angular/core';
 import { DifficultyOptions } from '../question.model';
 import { TimerPipe } from './timer.pipe';
 import { Timer, TimerOptions } from './timer.model';
@@ -20,7 +12,7 @@ import { Timer, TimerOptions } from './timer.model';
 })
 export class TimerComponent implements OnChanges {
   difficultyOption = input.required<DifficultyOptions>();
-  isOutputVisible = input.required<boolean>();
+  isCorrectAnswer = input.required<boolean>();
   timer: Timer = {
     minutes: 0,
     seconds: 15,
@@ -47,7 +39,7 @@ export class TimerComponent implements OnChanges {
     });
   }
   ngOnChanges() {
-    if (this.isOutputVisible()) {
+    if (this.isCorrectAnswer()) {
       this.stopTimer();
     }
   }
