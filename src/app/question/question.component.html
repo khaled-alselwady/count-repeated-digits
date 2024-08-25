@@ -1,16 +1,20 @@
 <section>
-  <header>How many times does the number {{ randomDigit() }} appear?</header>
+  <header>
+    How many times does the number <span>{{ randomDigit() }}</span> appear?
+  </header>
   <label for="difficulty">Select Difficulty:</label>
-  <select
-    name="difficulty"
-    id="difficulty"
-    (change)="onSelectedDifficulty(filter.value)"
-    #filter
-  >
-    <option value="easy">Easy</option>
-    <option value="medium">Medium</option>
-    <option value="hard">Hard</option>
-  </select>
+  <div class="select-container">
+    <select
+      name="difficulty"
+      id="difficulty"
+      (change)="onSelectedDifficulty(filter.value)"
+      #filter
+    >
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+  </div>
 
   <app-random-numbers [difficultyMode]="selectedDifficulty()" />
 

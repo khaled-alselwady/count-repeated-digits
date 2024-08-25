@@ -7,38 +7,58 @@ form {
 }
 
 input {
-  background-color: #1f1e1b;
-  border: 1px solid #1f1e1b;
-  padding: 0.7rem;
-  border-radius: 5px;
-  outline: none;
+  background-color: #222; /* Dark background to match the theme */
+  color: #ffd700; /* Gold text color to match other elements */
+  padding: 0.7rem; /* Padding for a comfortable typing experience */
+  border: 2px solid #ffd700; /* Gold border to make it stand out */
+  border-radius: 5px; /* Rounded corners for a polished look */
+  font: inherit; /* Slightly larger font size to emphasize the numeric input */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 10px #ffd700; /* Subtle glow effect to make it pop */
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  text-align: center; /* Center-align the numbers */
   margin-right: 1rem;
-  font: inherit;
-  overflow: hidden;
-  color: white;
 }
 
+button {
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  transition: all 0.21s ease;
+}
+
+/* Specific styles for the submit button */
 .submit {
   background-color: #4caf50;
-  color: #fff;
-  border: none;
-  padding: 0.7rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font: inherit;
 }
 
+.submit:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Specific styles for the reset button */
 .reset {
-  background-color: #f44336;
-  color: #fff;
-  border: none;
-  padding: 0.7rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
+  background-color: #c82333;
   margin-left: 1rem;
   position: absolute;
   right: 0;
-  font: inherit;
+}
+
+.reset:hover {
+  background-color: #a62c23;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus state for both buttons */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.5);
 }
 
 @media (max-width: 978px) {

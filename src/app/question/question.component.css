@@ -11,17 +11,53 @@ header {
   margin-bottom: 30px;
 }
 
+span {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: #333;
+  padding: 3px 7px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px #ffd700;
+}
+
 label {
   margin-right: 10px;
   font-size: 1.23rem;
 }
 
 select {
-  font: inherit;
-  padding: 0.5rem;
-  font-size: 1rem;
-  background-color: #1f1e1b;
-  color: rgb(215, 230, 255);
-  border: none;
+  background-color: #222;
+  color: #ffd700;
+  padding: 10px;
+  border: 2px solid #ffd700;
   border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  appearance: none; /* Remove default dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  outline: none;
+  box-shadow: 0 0 10px #ffd700;
+  width: 7rem;
+}
+
+.select-container:focus {
+  box-shadow: 0 0 15px #ffd700;
+}
+
+.select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.select-container::after {
+  content: "\25BC"; /* Unicode character for downward arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #ffd700;
+  pointer-events: none;
 }
