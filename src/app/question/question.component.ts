@@ -2,8 +2,9 @@ import { Component, OnInit, signal } from '@angular/core';
 
 import { DifficultyOptions } from './question.model';
 import { RandomNumbersComponent } from './random-numbers/random-numbers.component';
-import { InputResultComponent } from './input-result/input-result.component';
-import { OutputResultComponent } from './output-result/output-result.component';
+import { OutputResultComponent } from './result/output-result/output-result.component';
+import { InputResultComponent } from './result/input-result/input-result.component';
+import { TimerComponent } from "./timer/timer.component";
 
 @Component({
   selector: 'app-question',
@@ -12,7 +13,8 @@ import { OutputResultComponent } from './output-result/output-result.component';
     RandomNumbersComponent,
     InputResultComponent,
     OutputResultComponent,
-  ],
+    TimerComponent
+],
   templateUrl: './question.component.html',
   styleUrl: './question.component.css',
 })

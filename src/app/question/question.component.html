@@ -2,18 +2,23 @@
   <header>
     How many times does the number <span>{{ randomDigit() }}</span> appear?
   </header>
-  <label for="difficulty">Select Difficulty:</label>
-  <div class="select-container">
-    <select
-      name="difficulty"
-      id="difficulty"
-      (change)="onSelectedDifficulty(filter.value)"
-      #filter
-    >
-      <option value="easy">Easy</option>
-      <option value="medium">Medium</option>
-      <option value="hard">Hard</option>
-    </select>
+  <div class="container-difficulty-and-timer">
+    <div class="select-container">
+      <label for="difficulty">Select Difficulty:</label>
+      <select
+        name="difficulty"
+        id="difficulty"
+        (change)="onSelectedDifficulty(filter.value)"
+        #filter
+      >
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+    <div class="timer-container">
+      <app-timer />
+    </div>
   </div>
 
   <app-random-numbers [difficultyMode]="selectedDifficulty()" />

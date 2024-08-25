@@ -1,15 +1,6 @@
-import {
-  Component,
-  EventEmitter,
-  inject,
-  input,
-  Input,
-  output,
-  Output,
-  signal,
-} from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RandomNumbersService } from '../random-numbers/random-numbers.service';
+import { RandomNumbersService } from '../../random-numbers/random-numbers.service';
 
 @Component({
   selector: 'app-input-result',
